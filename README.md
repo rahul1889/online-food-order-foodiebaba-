@@ -11,7 +11,7 @@ please use following cammands for the same-
     to activate your vertual enviroment 
          source ./venv/bin/activate
          
- Note that, to use bot at messager you need to run your action server in another command line.
+      Note that, to use bot at messager you need to run your action server in another command line.
         for this use - rasa run actions
         
         
