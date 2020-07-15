@@ -1,0 +1,110 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- what_do_you_have
+- vegitarian
+- non_vegitarian
+- order
+- deny
+- breakfast
+- light_meal
+- heavy_meal
+- bye
+- item_quantity
+- item_quantifier
+- address
+- 'address:'
+entities:
+- item
+- quantity
+- quantifier
+slots:
+  item:
+    type: unfeaturized
+  quantifier:
+    type: unfeaturized
+  quantity:
+    type: unfeaturized
+responses:
+  utter_address:
+  - text: 'please tell us delivery address:'
+  utter_bye:
+  - text: bye
+  utter_slots_values:
+  - text: 'we are placing your order with below details: - item:{item} quantifier:{quantifier}
+      quantity:{quantity}'
+  utter_type_order:
+  - text: please type the food items you want
+  utter_ask_item:
+  - text: please tell us food you wish to order?
+  utter_ask_quantifier:
+  - text: how much food you need? (ex. half or full)
+  utter_ask_quantity:
+  - text: 'please tell us your quantity: (ex.1,2,5 etc.)'
+  utter_submit:
+  - text: thanks for the details
+  utter_breakfast_order:
+  - image: https://i.pinimg.com/originals/e5/0f/9a/e50f9ab64c0e914646dc15bd9ccd9fce.jpg
+    text: 'we have following items: please type food name here.'
+  utter_nonveg_heavy_meal_order:
+  - image: https://i.pinimg.com/originals/e5/0f/9a/e50f9ab64c0e914646dc15bd9ccd9fce.jpg
+    text: 'we have following items in nonveg heavy meal: please type food name here.'
+  utter_veg_heavy_meal_order:
+  - image: https://i.pinimg.com/originals/e5/0f/9a/e50f9ab64c0e914646dc15bd9ccd9fce.jpg
+    text: 'we have following items in veg heavy meal: please type food name here'
+  utter_nonveg_light_meal_order:
+  - image: https://i.pinimg.com/originals/e5/0f/9a/e50f9ab64c0e914646dc15bd9ccd9fce.jpg
+    text: 'we have following items in veg light meal: please type food name here'
+  utter_food_category:
+  - buttons:
+    - payload: /breakfast
+      title: Breakfast
+    - payload: /light_meal
+      title: Light meal
+    - payload: /heavy_meal
+      title: Heavy meal
+    text: 'please Pick a Food Category:'
+  utter_bot_greet:
+  - text: Hi there! Welcome to foodiebaba, Order and eat Great food.
+  utter_veg_or_nonveg:
+  - buttons:
+    - payload: /vegitarian
+      title: veg
+    - payload: /non_vegitarian
+      title: non veg
+    text: 'what would you like to taste:'
+  utter_veg:
+  - image: https://im1.dineout.co.in/images/uploads/restaurant/sharpen/2/m/o/m28421-15536680465c9b17ce86caf.jpg
+    text: 'here is our veg menu for you sir:'
+  utter_nonveg:
+  - image: https://www.paradisefoodcourt.in/images/menu/hyderabad/hitech/Takeaway-Menu-Hitech.jpg
+    text: 'here is our non veg menu for you sir:'
+  utter_anyting_else:
+  - text: Do you want to add any more items to your order?
+  utter_order_placed:
+  - text: thanks sir, we will deliver your order shortly.
+actions:
+- utter_order_placed
+- utter_anyting_else
+- utter_nonveg
+- utter_veg
+- utter_veg_or_nonveg
+- utter_bot_greet
+- utter_food_category
+- utter_nonveg_light_meal_order
+- utter_nonveg_heavy_meal_order
+- utter_veg_heavy_meal_order
+- utter_submit
+- utter_type_order
+- utter_breakfast_order
+- utter_slots_values
+- utter_bye
+- utter_ask_item
+- utter_ask_quantifier
+- utter_ask_quantity
+- utter_address
+
+forms:
+- order_form
